@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>	
+	<title>StudentInformation</title>
+	<link href="../static/style.css" rel="stylesheet"/ >
+</head>
+<body>
+	<div class="topnav">
+		<a  href="">Home</a>
+		<a  class="active" href="{{ url_for('studentlogin')}}">Student Login</a>
+		<a href="">Teachers Login</a>
+		<a href="">About</a>
+	  </div>
+  
+    <h1 style="color:white; text-align:center;">HELLO {{data1[1]}} </h1>
+
+    <div class="row">
+      <div class="column">
+        <h3 style="color:white; text-align:center;">Student Information</h3>
+        
+        <table class="table1">
+         {% for  i in range(7) %}
+          <tr>
+            <td>{{ headers[i] }}</td>
+            <td>{{ data1[i]  }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="column1">
+          <h3 style="color:white; text-align:center;">Marks</h3>
+          <table class="table2">
+            <tr>
+              {% for  i in range(7,13) %}
+            <td>{{headers[i]}}</td>
+          {% endfor %}
+          </tr>
+            <tr>
+              {% for  i in range(7,13) %}
+            <td>{{data1[i]}}</td>
+          {% endfor %}
+            </tr>  
+          </table>
+      </div>
+    </div>  
+    
+  <br>
+  <br><br><br>
+      
+     
+      <a href="{{ url_for('studentlogin')}}" class="previous">&laquo; Logout</a>
+</body>
+</html>

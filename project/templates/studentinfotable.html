@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>	
+	<title>StudentInformation</title>
+	<link href="../static/style.css" rel="stylesheet"/ >
+</head>
+<body>
+	<div class="topnav">
+		<a  href="">Home</a>
+		<a  href="{{ url_for('studentlogin')}}">Student Login</a>
+		<a  class="active" href="">Teachers Login</a>
+		<a  href="">About</a>
+	  </div>
+  
+
+
+    <div class="row">
+      <div class="column">
+           <h3 style="color:white; text-align:center;">Students Data</h3>
+            <table class="table2">
+            
+                <tr>
+                    {% for  i in headers %}
+                    <td>{{i}}</td>
+                {% endfor %}
+                </tr>
+
+
+                {% for  row in data %}
+                <tr>
+                    {% for  i in row %}
+                    <td>{{ i }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+      </div>  
+    </div>
+  <br>
+  <br><br>
+
+      <a href="{{ url_for('teachersinfo')}}" class="previous">&laquo; Previous</a>
+</body>
+</html>
